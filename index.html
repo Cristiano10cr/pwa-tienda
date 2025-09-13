@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Peces</title>
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#006994">
+
+  <!-- Estilos -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background: #006994;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    nav {
+      background: #004d66;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: url("https://images.unsplash.com/photo-1583394838336-acd977736f90") no-repeat center center/cover;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    .catalogo {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .catalogo h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #006994;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .producto {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    .producto img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .producto h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+      color: #004d66;
+    }
+    .producto p {
+      font-size: 0.9rem;
+    }
+    .producto:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #004d66;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐟 Tienda de Peces</h1>
+    <p>Los mejores peces para tu acuario</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Catálogo</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Bienvenido a la Tienda de Peces</h2>
+    <p>Explora nuestra colección de peces tropicales, de agua dulce y marinos.</p>
+  </section>
+
+  <section class="catalogo">
+    <h2>Nuestros Peces</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1603052875362-5db7623e587f" alt="Pez Betta">
+        <h3>Pez Betta</h3>
+        <p>Colorido y elegante. Ideal para acuarios pequeños.</p>
+      </div>
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1520222469209-63a58d5ee64a" alt="Pez Dorado">
+        <h3>Pez Dorado</h3>
+        <p>El clásico pez de acuario, resistente y fácil de cuidar.</p>
+      </div>
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1612214070473-1e8e5a1eecd7" alt="Pez Guppy">
+        <h3>Pez Guppy</h3>
+        <p>Pequeño, activo y con gran variedad de colores.</p>
+      </div>
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1508184964240-ee36f2ddc8a0" alt="Pez Payaso">
+        <h3>Pez Payaso</h3>
+        <p>Popular por la película Nemo, vive en aguas saladas.</p>
+      </div>
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5" alt="Pez Disco">
+        <h3>Pez Disco</h3>
+        <p>De agua dulce, muy valorado por sus colores vibrantes.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tienda de Peces | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Registro del Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+      .then(reg => console.log("✅ Service Worker registrado:", reg))
+      .catch(err => console.error("❌ Error al registrar Service Worker:", err));
+    }
+  </script>
+</body>
+</html>
